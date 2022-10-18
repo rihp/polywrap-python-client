@@ -14,5 +14,4 @@ class InMemoryFileReader(IFileReader):
     async def read_file(self, file_path: str) -> bytearray:
         if file_path == WRAP_MODULE_PATH:
             return self._wasm_module
-        else:
-            return await self._base_file_reader.read_file(file_path=file_path)
+        return await self._base_file_reader.read_file(file_path=file_path)
